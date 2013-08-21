@@ -20,14 +20,13 @@ public class EventListener implements AtmosphereResourceEventListener {
     }
 
     public void onResume(AtmosphereResourceEvent event) {
-        logger.info("onResume() called: {}", event);
     }
 
     public void onDisconnect(AtmosphereResourceEvent event) {
+        logger.info("onDisconnect() called: {}", event);
     }
 
     public void onBroadcast(AtmosphereResourceEvent event) {
-        logger.info("onBroadcast() called: {}", event);
     }
 
     public void onThrowable(AtmosphereResourceEvent event) {

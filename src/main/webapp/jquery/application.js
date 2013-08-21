@@ -15,6 +15,7 @@ $(function() {
             enableProtocol: true,
             trackMessageLength: true,
             logLevel: 'debug',
+            maxReconnectOnClose: 0,
             transport: $('input[name=transport]:checked').val()
         };
         request.onOpen = function(response) {
