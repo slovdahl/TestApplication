@@ -5,16 +5,11 @@ $(function() {
     var counter = $('#counter');
     var socket = $.atmosphere;
     var subSocket;
-    var myId;
     var messagesReceived = 0;
     var request;
     var pingScheduler;
 
     $('#connectButton').click(function() {
-        myId = prompt('Give ID');
-        if (myId === undefined || myId === null) {
-            return;
-        }
         request = {
             url: 'http://127.0.0.1:8080/TestApplication/test',
             contentType: "application/json",
@@ -39,7 +34,7 @@ $(function() {
         };
 
         request.onClose = function(response) {
-            addMessage('Connection closed: ' + myId, 'red', new Date());
+            addMessage('Connection closed', 'red', new Date());
             clearInterval(pingScheduler);
         };
 
