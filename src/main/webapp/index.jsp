@@ -56,9 +56,8 @@
         <div id="message_counter">Messages received: <span id="counter">0</span></div>
         <div id="content"></div>
         <div id="control">
-            <input type="radio" name="transport" value="websocket" checked="checked" />WebSocket<br />
-            <input type="radio" name="transport" value="sse" />SSE<br />
-            <input type="radio" name="transport" value="long-polling" />Long-polling<br />
+            <input type="radio" name="transport" value="websocket" />WebSocket<br />
+            <input type="radio" name="transport" value="long-polling" checked="checked" />Long-polling<br />
             <input type="button" id="connectButton" value="Connect"/>
             <input type="button" id="disconnectButton" value="Disconnect"/>
         </div>
