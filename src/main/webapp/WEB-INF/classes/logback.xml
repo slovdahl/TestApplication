@@ -1,0 +1,16 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+    <logger name="org.atmosphere" level="TRACE"/>
+    <logger name="test.application" level="TRACE"/>
+    <logger name="com" level="INFO"/>
+	<logger name="org" level="INFO"/>
+
+	<root level="trace">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>
