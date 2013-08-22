@@ -7,7 +7,6 @@ $(function() {
     var subSocket;
     var messagesReceived = 0;
     var request;
-    var pingScheduler;
 
     $('#connectButton').click(function() {
         request = {
@@ -22,7 +21,6 @@ $(function() {
         };
         request.onOpen = function(response) {
             addMessage('Connected using ' + response.transport, 'black', new Date());
-            pingScheduler = setInterval(sendKeepAlive, 5000);
         };
 
         request.onMessage = function(response) {
@@ -35,12 +33,10 @@ $(function() {
 
         request.onClose = function(response) {
             addMessage('Connection closed', 'red', new Date());
-            clearInterval(pingScheduler);
         };
 
         request.onError = function(response) {
             addMessage('ERROR: Problem with the socket: ' + response.toSource(), 'red', new Date());
-            clearInterval(pingScheduler);
         };
 
         request.onReconnect = function(request, response) {
@@ -73,10 +69,5 @@ $(function() {
         return (datetime.getHours() < 10 ? '0' + datetime.getHours() : datetime.getHours()) + ':'
                 + (datetime.getMinutes() < 10 ? '0' + datetime.getMinutes() : datetime.getMinutes()) + ':'
                 + (datetime.getSeconds() < 10 ? '0' + datetime.getSeconds() : datetime.getSeconds());
-    }
-
-    function sendKeepAlive() {
-        addMessage("Sending PING", 'black', new Date());
-        subSocket.push(JSON.stringify({message: "PING"}));
     }
 });

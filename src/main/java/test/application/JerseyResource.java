@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.atmosphere.annotation.Suspend;
 import org.atmosphere.cpr.AtmosphereResource;
+import org.atmosphere.cpr.Broadcaster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,9 +20,24 @@ public class JerseyResource {
 
     @GET
     @Suspend(contentType = "application/json")
-    public String handleSuspend() {
+    public String handleSuspend(final @Context Broadcaster broadcaster) {
         logger.info("CLIENT SUSPENDED");
-        return "";
+        Thread t = new Thread(new Runnable() {
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                }
+                broadcaster.broadcast("test-message-1");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                }
+                broadcaster.broadcast("test-message-2");
+            }
+        });
+        t.start();
+        return "CONNECTED";
     }
 
     @POST

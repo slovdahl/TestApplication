@@ -58,7 +58,6 @@
         <div id="control">
             <input type="radio" name="transport" value="websocket" checked="checked" />WebSocket<br />
             <input type="radio" name="transport" value="sse" />SSE<br />
-            <input type="radio" name="transport" value="long-polling" />Long-polling<br />
             <input type="button" id="connectButton" value="Connect"/>
             <input type="button" id="disconnectButton" value="Disconnect"/>
         </div>

@@ -10,6 +10,10 @@
             <param-name>com.sun.jersey.config.property.packages</param-name>
             <param-value>test.application</param-value>
         </init-param>
+        <init-param>
+            <param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
+            <param-value>org.atmosphere.client.TrackMessageSizeInterceptor</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>AtmosphereServlet</servlet-name>
