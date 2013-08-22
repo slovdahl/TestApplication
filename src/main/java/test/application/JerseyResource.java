@@ -1,14 +1,10 @@
 package test.application;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
 
 import org.atmosphere.annotation.Suspend;
-import org.atmosphere.cpr.AtmosphereResource;
 import org.atmosphere.cpr.Broadcaster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,11 +34,5 @@ public class JerseyResource {
         });
         t.start();
         return "CONNECTED";
-    }
-
-    @POST
-    @Consumes(MediaType.TEXT_PLAIN)
-    public void handleMessage(final @Context AtmosphereResource res, final String message) {
-        logger.info("MESSAGE RECEIVED: " + message);
     }
 }
