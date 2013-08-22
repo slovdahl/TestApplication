@@ -11,7 +11,7 @@ $(function() {
 
     $('#connectButton').click(function() {
         request = {
-            url: 'http://127.0.0.1:8080/TestApplication/test',
+            url: '/TestApplication/test',
             contentType: "application/json",
             enableProtocol: true,
             trackMessageLength: true,
