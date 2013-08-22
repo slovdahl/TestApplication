@@ -19,7 +19,7 @@ public class JerseyResource {
     private static final Logger logger = LoggerFactory.getLogger(JerseyResource.class);
 
     @GET
-    @Suspend(contentType = "application/json")
+    @Suspend
     public String handleSuspend(final @Context Broadcaster broadcaster) {
         logger.info("CLIENT SUSPENDED");
         Thread t = new Thread(new Runnable() {
