@@ -5,6 +5,7 @@
         <description>AtmosphereServlet</description>
         <servlet-name>AtmosphereServlet</servlet-name>
         <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+        <async-supported>true</async-supported>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
             <param-value>test.application</param-value>
