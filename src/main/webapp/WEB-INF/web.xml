@@ -11,6 +11,10 @@
             <param-value>test.application</param-value>
         </init-param>
         <init-param>
+            <param-name>org.atmosphere.cpr.broadcasterCacheClass</param-name>
+            <param-value>org.atmosphere.cache.UUIDBroadcasterCache</param-value>
+        </init-param>
+        <init-param>
             <param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
             <param-value>org.atmosphere.client.TrackMessageSizeInterceptor</param-value>
         </init-param>
