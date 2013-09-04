@@ -11,12 +11,8 @@
             <param-value>test.application</param-value>
         </init-param>
         <init-param>
-            <param-name>org.atmosphere.websocket.messageContentType</param-name>
-            <param-value>text/plain</param-value>
-        </init-param>
-        <init-param>
-            <param-name>org.atmosphere.sse.contentType</param-name>
-            <param-value>text/plain</param-value>
+            <param-name>org.atmosphere.cpr.broadcasterClass</param-name>
+            <param-value>org.atmosphere.util.SimpleBroadcaster</param-value>
         </init-param>
         <init-param>
             <param-name>org.atmosphere.cpr.AtmosphereInterceptor</param-name>
